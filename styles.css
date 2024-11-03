@@ -1,4 +1,5 @@
 
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -11,25 +12,46 @@ body {
     background-color: #fff;
 }
 
+/* Animaciones */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes scaleUp {
-    from { transform: scale(0.95); }
-    to { transform: scale(1); }
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 header {
     background-color: #f7cdcf;
     padding: 10px 20px;
     animation: fadeIn 1s ease-in-out;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
@@ -61,6 +83,16 @@ nav a:hover {
     animation: fadeIn 1s ease-in-out;
 }
 
+.hero h1 {
+    font-size: 2.5em;
+    animation: scaleUp 0.5s ease forwards;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
 .product-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +111,11 @@ nav a:hover {
     transition: transform 0.3s;
 }
 
+.product-item img {
+    width: 100%;
+    height: auto;
+}
+
 .product-item:hover {
     transform: scale(1.05);
     animation: scaleUp 0.3s ease;
@@ -90,12 +127,30 @@ nav a:hover {
     animation: fadeIn 1s ease-in-out;
 }
 
+#ubicacion a {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#ubicacion a:hover {
+    color: #e3b5b6;
+    animation: pulse 0.5s ease-in-out;
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     animation: fadeIn 1s ease-in-out;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
 }
 
 form button {

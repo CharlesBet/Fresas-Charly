@@ -1,187 +1,136 @@
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #fff;
-}
-
-/* Diseño Responsivo */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .product-gallery {
-        flex-direction: column;
-    }
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes scaleUp {
-    from {
-        transform: scale(0.95);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
 }
 
 header {
-    background-color: #f7cdcf;
-    padding: 10px 20px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-nav {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 100%;
+    max-width: 250px; /* Ajusta este valor según las dimensiones de tu logotipo */
+    height: auto;
+    margin-left: 20px;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin-right: 20px;
 }
 
-nav a {
-    color: #333;
+nav ul li a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #e3b5b6;
-    animation: pulse 0.5s ease-in-out;
-}
-
-.hero {
-    background-color: #f7cdcf;
-    color: #333;
-    text-align: center;
-    padding: 50px 20px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.hero h1 {
-    font-size: 2.5em;
-    animation: scaleUp 0.5s ease forwards;
-}
-
-.hero p {
-    font-size: 1.2em;
-    margin-top: 10px;
-}
-
-.product-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+main {
     padding: 20px;
-    justify-content: center;
-    animation: fadeIn 1s ease-in-out;
 }
 
-.product-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-    transition: transform 0.3s;
+section {
+    margin-bottom: 40px;
 }
 
-.product-item img {
-    width: 100%;
-    height: auto;
-}
-
-.product-item:hover {
-    transform: scale(1.05);
-    animation: scaleUp 0.3s ease;
-}
-
-#ubicacion {
-    text-align: center;
-    padding: 20px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-#ubicacion a {
+h1, h2 {
     color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-#ubicacion a:hover {
-    color: #e3b5b6;
-    animation: pulse 0.5s ease-in-out;
+button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff4a3d;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    animation: fadeIn 1s ease-in-out;
 }
 
-form input, form textarea, form button {
-    width: 100%;
-    max-width: 400px;
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
     padding: 10px;
-    border: 1px solid #ddd;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form button {
-    background-color: #f7cdcf;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    animation: scaleUp 0.5s ease forwards;
-}
-
-form button:hover {
-    background-color: #e3b5b6;
-    animation: pulse 0.5s ease-in-out;
+    margin-top: 20px;
+    align-self: flex-start;
 }
 
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 10px;
-    background-color: #f7cdcf;
-    color: #333;
-    font-size: 0.9em;
-    animation: fadeIn 1s ease-in-out;
+    padding: 10px 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        background-color: #ff4a3d;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

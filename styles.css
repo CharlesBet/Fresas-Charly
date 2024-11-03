@@ -12,6 +12,17 @@ body {
     background-color: #fff;
 }
 
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-gallery {
+        flex-direction: column;
+    }
+}
+
 /* Animaciones */
 @keyframes fadeIn {
     from {
